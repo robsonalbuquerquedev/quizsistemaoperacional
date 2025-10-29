@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".MainActivity">
+
+    <!-- Container central da tela -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/centerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Bloco superior com ícone / logo -->
+        <ImageView
+            android:id="@+id/imgHeader"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/ic_quiz_logo"
+            android:contentDescription="Logo Quiz SO"
+            android:background="@drawable/bg_icon_circle"
+            android:padding="16dp"
+            android:elevation="6dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Título principal -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bem-vindo!"
+            android:textColor="#1A1A1A"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toBottomOf="@id/imgHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+        <!-- Subtítulo motivador -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Você está prestes a treinar 25 questões de Sistemas Operacionais cobradas em concurso. Foque, responda e acompanhe seu desempenho."
+            android:textColor="#4A4A4A"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp" />
+
+        <!-- Card de informações do quiz -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="24dp"
+            android:paddingHorizontal="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="5dp"
+            android:backgroundTint="#FAFAFA"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvQuizTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quiz: Sistemas Operacionais"
+                    android:textColor="#2E3A59"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/tvQuizDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• 25 questões objetivas\n• Formato múltipla escolha\n• Resultado no final\n• Ideal para provas de TI, suporte, analista e técnico"
+                    android:textColor="#6B6B6B"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botão Iniciar -->
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="COMEÇAR AGORA"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:backgroundTint="#00796B"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toBottomOf="@id/cardInfo"
+            app:layout_constraintStart_toStartOf="@id/cardInfo"
+            app:layout_constraintEnd_toEndOf="@id/cardInfo"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp" />
+
+        <!-- Texto pequenininho de reforço -->
+        <TextView
+            android:id="@+id/tvSmallNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="💡 Dica: responder simulados diariamente aumenta muito sua chance de aprovação."
+            android:textColor="#8A8A8A"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/btnStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="32dp" />
+
+        <!-- Texto discreto de versão no rodapé -->
+        <TextView
+            android:id="@+id/tvVersionInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Versão 1.0 • Conteúdo focado em concursos de TI"
+            android:textColor="#9E9E9E"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tvSmallNote"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
